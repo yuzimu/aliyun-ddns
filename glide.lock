@@ -1,0 +1,28 @@
+hash: ac68a2b7371b7eee2ce42ff0a1a98d81e89c6fda606d56a8cef2da3e76850d90
+updated: 2019-09-02T15:02:41.011211+08:00
+imports:
+- name: github.com/aliyun/alibaba-cloud-sdk-go
+  version: 7a807875136654e7ca7fcdd5511cd72b14cc25ba
+  subpackages:
+  - sdk
+  - sdk/auth
+  - sdk/auth/credentials
+  - sdk/auth/credentials/provider
+  - sdk/auth/signers
+  - sdk/endpoints
+  - sdk/errors
+  - sdk/requests
+  - sdk/responses
+  - sdk/utils
+  - services/alidns
+- name: github.com/jmespath/go-jmespath
+  version: c2b33e8439af944379acbdd9c3a5fe0bc44bd8a5
+- name: github.com/json-iterator/go
+  version: 27518f6661eba504be5a7a9a9f6d9460d892ade3
+- name: github.com/modern-go/concurrent
+  version: bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94
+- name: github.com/modern-go/reflect2
+  version: 94122c33edd36123c84d5368cfb2b69df93a0ec8
+- name: gopkg.in/ini.v1
+  version: d4cae42d398bc0095297fc3315669590d29166ea
+testImports: []
