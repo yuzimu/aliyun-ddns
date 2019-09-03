@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/alidns"
 	"gopkg.in/ini.v1"
+	"io/ioutil"
 	"log"
-	"net"
+	"net/http"
 	"strings"
 	"time"
 )
@@ -28,13 +29,13 @@ func init() {
 
 // 获取外网IP
 func get_external() string {
-	conn, err := net.Dial("udp", "google.com:80")
+	resp, err := http.Get("http://myexternalip.com/raw")
 	if err != nil {
-		log.Println(err)
 		return ""
 	}
-	defer conn.Close()
-	return strings.Split(conn.LocalAddr().String(), ":")[0]
+	defer resp.Body.Close()
+	content, _ := ioutil.ReadAll(resp.Body)
+	return string(content)
 }
 
 // 阿里云ddns绑定
@@ -129,6 +130,7 @@ func main() {
 			continue
 		}
 		netIp = localIp
+		fmt.Println(netIp)
 		replace(netIp)
 	}
 }
